@@ -1,8 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { allPosts } from "contentlayer/generated";
-import { pick } from "@contentlayer/client";
+import { allPosts, Post } from '../.contentlayer/generated'
 
 const Home: NextPage = () => {
   return (
