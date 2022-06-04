@@ -30,7 +30,7 @@ const PostLayout = ({ post }: { post: Post }) => {
         <title>{post.title} / Toby&apos;s blog</title>
       </Head>
       <div className="flex flex-col justify-center place-items-center absolute top-32">
-        <h1 className="text-8xl font-bold text-left">{post.title}</h1>
+        <h1 className="text-4xl font-bold text-left">{post.title}</h1>
           <div className="text-left pt-8 pb-16 flex">
               <h1 className="text-lg pl-4">{post.author} ~ <span>
                  <time dateTime={post.date} className="">
@@ -39,11 +39,14 @@ const PostLayout = ({ post }: { post: Post }) => {
               </span>
             </h1>
             </div>
-            <p className="w-1/3 pb-8" dangerouslySetInnerHTML={{ __html: post.body.html }} />
-            <footer className="pt-4 border-t border-rose-600 w-1/3">
+            <p className="w-1/3 pb-8 text-lg" dangerouslySetInnerHTML={{ __html: post.body.html }} />
+            <div className="pt-4 border-t border-rose-600 w-2/3">
               <Link href="/">↩︎ Head home</Link>
-              
-            </footer>
+              <div className="flex pt-4 justify-center place-items-center pb-8">
+                <Link href="https://github.com/developedbytoby"><a target="_blank" rel="noopener noreferrer">GitHub</a></Link> <p className="px-2">~</p>
+                <Link href="https://twitter.com/developedbytoby"><a target="_blank" rel="noopener noreferrer">Twitter</a></Link>
+                </div>
+            </div>
           </div>
     </div>
   );

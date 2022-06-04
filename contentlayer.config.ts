@@ -19,11 +19,6 @@ const Post = defineDocumentType(() => ({
         description: 'Toby',
         required: true,
    },
-   authorImage: {
-    type: 'string',
-    description: 'https://avatars.githubusercontent.com/u/77097223?v=4',
-    required: true,
-    },
    preview: {
     type: 'string',
     description: 'This is a description! Desciptions are great.',
