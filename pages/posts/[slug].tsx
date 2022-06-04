@@ -39,8 +39,8 @@ const PostLayout = ({ post }: { post: Post }) => {
               </span>
             </h1>
             </div>
-            <p className="w-1/3 pb-8 text-lg" dangerouslySetInnerHTML={{ __html: post.body.html }} />
-            <div className="pt-4 border-t border-rose-600 w-2/3">
+            <p className="md:w-1/3 w-2/3 pb-8 text-lg" dangerouslySetInnerHTML={{ __html: post.body.html }} />
+            <div className="pt-4 border-t border-rose-600 md:w-1/3 w-2/3">
               <Link href="/">↩︎ Head home</Link>
               <div className="flex pt-4 justify-center place-items-center pb-8">
                 <Link href="https://github.com/developedbytoby"><a target="_blank" rel="noopener noreferrer">GitHub</a></Link> <p className="px-2">~</p>
