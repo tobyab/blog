@@ -1,11 +1,13 @@
 ---
-title: "Lorem"
-date: "4/6/22"
-author: "Toby B"
-preview: "Ullamco et nostrud magna commodo nostrud occaecat quis pariatur id ipsum. Ipsum
-consequat enim id excepteur consequat nostrud esse esse fugiat dolore.
-Reprehenderit occaecat exercitation non cupidatat in eiusmod laborum ex eu
-fugiat aute culpa pariatur."
+    title: "Lorem"
+    date: "4/6/22"
+    author: "Toby B"
+    preview: "Ullamco et nostrud magna commodo nostrud occaecat quis pariatur id ipsum. Ipsum
+    consequat enim id excepteur consequat nostrud esse esse fugiat dolore.
+    Reprehenderit occaecat exercitation non cupidatat in eiusmod laborum ex eu
+    fugiat aute culpa pariatur."
+    authorImage: "https://avatars.githubusercontent.com/u/77097223?v=4"
+    readTime: "1 minute"
 ---
 
 Ullamco et nostrud magna commodo nostrud occaecat quis pariatur id ipsum. Ipsum

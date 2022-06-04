@@ -9,6 +9,17 @@ export async function getStaticPaths() {
   };
 }
 
+export async function getStaticProps({ params }: any) {
+  const post: Post | undefined  = allPosts.find! (
+    (post) => post._raw.flattenedPath === params.slug
+  );
+  return {
+    props: {
+      post,
+    },
+  };
+}
+
 const PostLayout = ({ post }: { post: Post }) => {
   return (
     <>
@@ -19,7 +30,7 @@ const PostLayout = ({ post }: { post: Post }) => {
         <div className="text-center mb-8">
           <h1>{post.title}</h1>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: post.body.html }} />
+        <div className="" dangerouslySetInnerHTML={{ __html: post.body.html }} />
       </article>
     </>
   );
