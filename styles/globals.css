@@ -11,8 +11,8 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration: auto;
+  color: rgb(23, 108, 130);
+  text-decoration: underline;
 }
 
 * {

@@ -16,7 +16,7 @@ export function PostCard(post: Post) {
   return (
     <div className="text-left space-y-2 pt-8">
       <Link href={post.url}>
-        <a>
+        <a className="text-black no-underline">
           <h1 className="text-xl">{post.title}</h1>
             <p>{post.preview}</p>
               <p className="text-lg">{post.author} ~ <span>

@@ -1,5 +1,5 @@
 ---
-    title: "My favourite tools."
+    title: "My favourite tools"
     date: "3/14/2022"
     author: "Toby B"
     preview: "A list of all of the tools I have loved using."

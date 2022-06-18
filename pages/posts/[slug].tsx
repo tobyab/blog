@@ -33,25 +33,23 @@ const PostLayout = ({ post }: { post: Post }) => {
         <h1 className="text-4xl font-bold text-left">{post.title}</h1>
           <div className="text-left pt-8 pb-16 flex">
               <h1 className="text-lg pl-4">{post.author} ~ <span>
-                 <time dateTime={post.date} className="">
-                    {format(parseISO(post.date), "d LLL, yyyy")}
+                <time dateTime={post.date} className="">
+                  {format(parseISO(post.date), "d LLL, yyyy")}
                 </time>
               </span>
             </h1>
             </div>
             <p className="md:w-1/3 w-2/3 pb-8 text-lg" dangerouslySetInnerHTML={{ __html: post.body.html }} />
             <div className="pt-4 border-t border-rose-600 md:w-1/3 w-2/3">
-              <Link href="/">↩︎ Head home</Link>
+              <Link href="/"><a className="text-black no-underline">↩︎ Head home</a></Link>
               <div className="flex pt-4 justify-center place-items-center pb-8">
-                <Link href="https://github.com/developedbytoby"><a target="_blank" rel="noopener noreferrer">GitHub</a></Link> <p className="px-2">~</p>
-                <Link href="https://twitter.com/developedbytoby"><a target="_blank" rel="noopener noreferrer">Twitter</a></Link>
+                <Link href="https://github.com/developedbytoby"><a target="_blank" rel="noopener noreferrer" className="text-black no-underline">GitHub</a></Link> <p className="px-2">~</p>
+                <Link href="https://twitter.com/developedbytoby"><a target="_blank" rel="noopener noreferrer" className="text-black no-underline">Twitter</a></Link>
                 </div>
             </div>
           </div>
     </div>
   );
 };
-
-//
 
 export default PostLayout;

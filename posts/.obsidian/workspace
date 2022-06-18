@@ -1,0 +1,96 @@
+{
+  "main": {
+    "id": "38cf391f988bda56",
+    "type": "split",
+    "children": [
+      {
+        "id": "56b07fda31fee3fc",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "open-source-software.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9a785b56922d6bdf",
+    "type": "split",
+    "children": [
+      {
+        "id": "85b6718dd135c172",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "444a6dd3dc044b7f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "356169c004766b2f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d43301e9b2de6c0a",
+    "type": "split",
+    "children": [
+      {
+        "id": "5abebd96b5141156",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8b4665536b7c88db",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "open-source-software.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "56b07fda31fee3fc",
+  "lastOpenFiles": [
+    "open-source-software.md",
+    "starting-a-company.md",
+    "favourite-tools.md"
+  ]
+}
