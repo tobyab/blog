@@ -1,8 +1,10 @@
 import { allPosts, Post } from '../../.contentlayer/generated'
 import Head from 'next/head'
 import { format, parseISO } from 'date-fns'
-import Image from 'next/image'
 import Link from 'next/link'
+import { BsGithub, BsTwitter, BsFillEnvelopeFill } from 'react-icons/bs'
+import { IconContext } from 'react-icons'
+import { useMDXComponent } from 'next-contentlayer/hooks'
 
 export async function getStaticPaths() {
   const paths: string[] = allPosts.map((post) => post.url);
@@ -22,36 +24,36 @@ export async function getStaticProps({ params }: any) {
     },
   };
 }
-
 const PostLayout = ({ post }: { post: Post }) => {
+const MDXContent = useMDXComponent(post.body.code)
   return (
     <div>
+      <IconContext.Provider value={{ size: "2em" }}>
       <Head>
-        <title>{post.title} / Toby&apos;s blog</title>
+        <title>{post.title}</title>
       </Head>
-      <div className="flex flex-col justify-center place-items-center absolute top-32">
-        <h1 className="text-4xl font-bold text-left">{post.title}</h1>
-          <div className="text-left pt-8 pb-16 flex">
-              <h1 className="text-lg pl-4">{post.author} ~ <span>
-                 <time dateTime={post.date} className="">
-                    {format(parseISO(post.date), "d LLL, yyyy")}
-                </time>
-              </span>
-            </h1>
+      <div className="max-w-2xl mx-auto pt-32 resize-none px-4">
+        <h1 className="text-4xl font-semibold">{post.title}</h1>
+          <div className="pt-4 pb-8">
+          <time dateTime={post.date} className="text-gray-600 pb-10 mx-auto block">
+            {format(parseISO(post.date), 'd LLL, yyyy')}
+          </time>
+          <img
+            className="rounded-lg"
+            src={post.image}
+            alt={post.title}
+          />
             </div>
-            <p className="md:w-1/3 w-2/3 pb-8 text-lg" dangerouslySetInnerHTML={{ __html: post.body.html }} />
-            <div className="pt-4 border-t border-rose-600 md:w-1/3 w-2/3">
-              <Link href="/">↩︎ Head home</Link>
-              <div className="flex pt-4 justify-center place-items-center pb-8">
-                <Link href="https://github.com/developedbytoby"><a target="_blank" rel="noopener noreferrer">GitHub</a></Link> <p className="px-2">~</p>
-                <Link href="https://twitter.com/developedbytoby"><a target="_blank" rel="noopener noreferrer">Twitter</a></Link>
-                </div>
+            <div className="pb-8 text-lg">
+              <MDXContent/>
             </div>
-          </div>
+              <div className="border-t-2 flex pt-8 justify-center place-items-center pb-8 space-x-3">
+                {post.end}
+              </div>
+        </div>
+      </IconContext.Provider>
     </div>
   );
 };
-
-//
 
 export default PostLayout;

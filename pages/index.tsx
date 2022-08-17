@@ -14,16 +14,24 @@ export async function getStaticProps() {
 
 export function PostCard(post: Post) {
   return (
-    <div className="text-left space-y-2 pt-8">
+    <div className="max-w-2xl mx-auto resize-none mb-16 text-left">
       <Link href={post.url}>
         <a>
-          <h1 className="text-xl">{post.title}</h1>
-            <p>{post.preview}</p>
-              <p className="text-lg">{post.author} ~ <span>
-              <time dateTime={post.date} className="">
-                {format(parseISO(post.date), "d LLL, yyyy")}
-              </time>
-            </span>
+          <img
+            className="rounded-lg"
+            src={post.image}
+            alt={post.title}
+          />
+          <h2 className="text-4xl font-semibold pt-8 pb-4 mx-auto">
+            {post.title}
+          </h2>
+          <p className="text-lg">
+          <time dateTime={post.date} className="text-gray-600">
+            {format(parseISO(post.date), "d LLL, yyyy")}
+          </time>
+          </p>
+          <p className="text-lg pt-4">
+            {post.preview}
           </p>
         </a>
       </Link>
@@ -33,18 +41,21 @@ export function PostCard(post: Post) {
 
 export default function Home({ posts }: { posts: Post[] }) {
   return (
-    <div className="text-center flex justify-center flex-col place-items-center">
+    <div className="text-left flex justify-center flex-col place-items-center px-4">
       <Head>
         <title>Toby&apos;s blog</title>
         <meta name="description" content="Toby&apos;s blog" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <div className="absolute top-36">
-          <h1 className="font-bold text-6xl pb-8">Toby&apos;s Blog</h1>
+        <div className="pt-36">
+          <div className="pb-10">
+            <h1 className="font-bold text-6xl pb-4">Toby&apos;s Blog</h1>
+            <p className="text-lg">Hey there! I&apos;m Toby, and this is my blog</p>
+          </div>
 
           {posts.map((post, idx) => (
-        <PostCard key={idx} {...post} />
-      ))}
+            <PostCard key={idx} {...post} />
+          ))}
         </div>
     </div>
   )

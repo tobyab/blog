@@ -1,14 +1,20 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import Link from 'next/link'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div>
-      <style>
-        @import url(&apos;https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap&apos;);
-      </style>
+  <div>
+    <Link href="/">
+      <img
+        className="rounded-full sm:m-8 m-4 float-right cursor-pointer fixed hover:opacity-75"
+        src="https://github.com/developedbytoby.png"
+        height="45"
+        width="45"
+      />
+    </Link> 
     <Component {...pageProps}/>
-   </div>
+  </div>
   )
 }
 
