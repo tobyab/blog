@@ -1,16 +1,16 @@
 import { allPosts, Post } from '../../.contentlayer/generated'
 import Head from 'next/head'
 import { format, parseISO } from 'date-fns'
-import Link from 'next/link'
-import { BsGithub, BsTwitter, BsFillEnvelopeFill } from 'react-icons/bs'
 import { IconContext } from 'react-icons'
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import Link from 'next/link'
+import { BsTwitter, BsGithub, BsMailbox2 } from 'react-icons/bs'
 
 export async function getStaticPaths() {
   const paths: string[] = allPosts.map((post) => post.url);
   return {
     paths,
-    fallback: false,
+    fallback: false
   };
 }
 
@@ -24,11 +24,12 @@ export async function getStaticProps({ params }: any) {
     },
   };
 }
+
 const PostLayout = ({ post }: { post: Post }) => {
 const MDXContent = useMDXComponent(post.body.code)
   return (
     <div>
-      <IconContext.Provider value={{ size: "2em" }}>
+      <IconContext.Provider value={{ size: "1.5em" }}>
       <Head>
         <title>{post.title}</title>
       </Head>
@@ -50,6 +51,38 @@ const MDXContent = useMDXComponent(post.body.code)
               <div className="border-t-2 flex pt-8 justify-center place-items-center pb-8 space-x-3">
                 {post.end}
               </div>
+          <div className="pb-16 pt-4">
+            <p className="text-gray-600 float-left">Built by Toby. Always <Link href="https://github.com/developedbytoby/blog"><a className="underline" target="_blank" rel="noopener noreferrer">open source</a></Link>.</p>
+            <div className="float-right flex space-x-3">
+              <Link href="https://twitter.com/developedbytoby">
+                <a 
+                  className="cursor-pointer hover:opacity-75"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsTwitter/>
+                </a>
+              </Link>
+              <Link href="https://github.com/developedbytoby">
+                <a 
+                  className="cursor-pointer hover:opacity-75"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsGithub/>
+                </a>
+              </Link>
+              <Link href="mailto:mail.toby@icloud.com">
+                <a
+                  className="cursor-pointer hover:opacity-75"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsMailbox2/>
+                </a>
+              </Link>
+            </div>
+          </div>
         </div>
       </IconContext.Provider>
     </div>
