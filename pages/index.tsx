@@ -1,9 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import { allPosts, Post } from '../.contentlayer/generated'
-import { compareDesc, format, parseISO } from 'date-fns'
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
+import { allPosts, Post } from "../.contentlayer/generated"
+import { compareDesc, format, parseISO } from "date-fns"
 
 export async function getStaticProps() {
   const posts: Post[] = allPosts.sort((a, b) => {
@@ -16,13 +15,13 @@ export function PostCard(post: Post) {
   return (
     <div className="max-w-2xl mx-auto resize-none mb-16 text-left">
       <Link href={post.url}>
-        <a>
-          <img
-            className="rounded-lg"
+          <Image
             src={post.image}
             alt={post.title}
+            width={1200}
+            height={630}
           />
-          <h2 className="text-4xl font-semibold pt-8 pb-4 mx-auto">
+          <h2 className="text-4xl font-semibold pt-8 mb-4">
             {post.title}
           </h2>
           <p className="text-lg">
@@ -33,7 +32,6 @@ export function PostCard(post: Post) {
           <p className="text-lg pt-4">
             {post.preview}
           </p>
-        </a>
       </Link>
     </div>
   )
@@ -49,8 +47,8 @@ export default function Home({ posts }: { posts: Post[] }) {
       </Head>
         <div className="pt-36">
           <div className="pb-10">
-            <h1 className="font-bold text-6xl pb-4">Toby&apos;s Blog</h1>
-            <p className="text-lg">Hey there! I&apos;m Toby, and this is my blog</p>
+            <h1 className="font-semibold text-5xl pb-4">Toby&apos;s Blog</h1>
+            <p className="text-lg">Hey there! Welcome to my blog.</p>
           </div>
 
           {posts.map((post, idx) => (

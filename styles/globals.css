@@ -18,3 +18,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+img {
+  border-radius: 0.5rem;
+}
